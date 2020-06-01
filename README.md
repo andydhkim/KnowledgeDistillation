@@ -24,3 +24,20 @@ $ ctrl-a ctrl-d
 (back in original terminal)
 ```
 Now you can access the tensorboard visuals by going to http://127.0.0.1:16006
+
+### 1. Train without KD
+```
+$ python train.py -model <modelname>
+```
+
+### 2. Train with KD
+```
+$ python trainDistill.py -model <studentModelName> -tSaved <savedTeacher> -tModel <teacherModelName>
+(for example)
+$ python trainDistill.py -model mobilenet -tSaved SavedModels/resnet18/lr03/resnet18-199.pth -tModel resnet18
+````
+
+### 3. Test
+```
+$ python test.py -model <modelname> -state <savedModel>
+```
