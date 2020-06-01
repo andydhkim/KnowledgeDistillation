@@ -37,7 +37,13 @@ $ python trainDistill.py -model <studentModelName> -tSaved <savedTeacher> -tMode
 $ python trainDistill.py -model mobilenet -tSaved SavedModels/resnet18/lr03/resnet18-199.pth -tModel resnet18
 ````
 
-### 3. Test
+### 3. Train with EOS
+```
+$ python trainEOS.py -model <studentModelName> -tSaved <savedTeacher> -tModel <teacherModelName>
+$ python trainEOS.py -model mobilenet -tSaved SavedModels/resnet18/lr03/resnet18-199.pth -tModel resnet18
+````
+
+### 4. Test
 ```
 $ python test.py -model <modelname> -state <savedModel>
 ```
